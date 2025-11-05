@@ -12,6 +12,18 @@ public class Botte extends Probleme {
 		return getType().getBotte() ;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		Type type = this.getType();
+		if (obj instanceof Botte carte) {
+			return type.getBotte().equals(carte.getType().getBotte());
+		}
+		return false;
+	}
 	
+	@Override
+	public int hashCode() {
+		return 3*getType().getBotte().hashCode();
+	}
 
 }

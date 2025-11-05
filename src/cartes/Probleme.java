@@ -4,7 +4,7 @@ public class Probleme extends Carte {
 
 	private Type type;
 	
-	public Probleme(Type type) {
+	protected Probleme(Type type) {
 		super();
 		this.type = type;
 	}
@@ -13,5 +13,5 @@ public class Probleme extends Carte {
 		return type;
 	}
 	
-
+	
 }

@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import cartes.Carte;
 import cartes.JeuDeCartes;
 
 class TestJeuDeCartes {
@@ -19,5 +20,13 @@ class TestJeuDeCartes {
 	void testAffichageJeuDeCartes() {
 		System.out.println(jeu.affichageJeuDeCartes());
 	}
+	
+	@Test
+	void testcheckCount() {
+		Carte[] deck = jeu.donnerCartes();
+		System.out.println(jeu.checkCount(deck));
+	}
+	
+	
 
 }

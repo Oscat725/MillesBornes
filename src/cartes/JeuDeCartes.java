@@ -1,5 +1,7 @@
 package cartes;
 
+import java.util.Iterator;
+
 public class JeuDeCartes {
 
 	private Configuration[] typesDeCartes = new Configuration[19];
@@ -47,15 +49,29 @@ public class JeuDeCartes {
 	}
 
 	public Carte[] donnerCartes() {
-		Carte[] cartes = new Carte[110];
+		Carte[] deck = new Carte[110];
 		int indice = 0;
 		for (Configuration configuration : typesDeCartes) {
-			if (configuration.getNbExemplaires() > 1) {
-				cartes[indice] = configuration.getCarte();
-				indice++;
+			for (int i = 0; i < configuration.getNbExemplaires(); i++) {
+				deck[indice] = configuration.getCarte();
+				indice++;	
 			}
 		}
-		return cartes;
+		return deck;
+	}
+	
+	public boolean checkCount(Carte[] deck) {
+		int indice = 0;
+		for (Configuration configuration : typesDeCartes) {
+			for (int i = 0; i < deck.length; i++,indice++) {
+				if (!configuration.carte.equals(deck[indice])) {
+					return false;
+				}
+			}
+		}
+		return true;
+		
+
 	}
 
 	private static class Configuration {

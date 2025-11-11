@@ -28,12 +28,11 @@ public class Joueur {
 	}
 	
 	private int donnerKmParcourus() {
-		int km =0;
-		for (Borne borne : zone.pileBorne) {
-			
-			km+=borne.km;
-		}
-		return km;
+		return zone.donnerKmParcourus();
+	}
+	
+	public boolean estDepotAutorise(Carte carte) {
+		return zone.estDepotAutorise(carte);
 	}
 	
 	@Override

@@ -22,9 +22,10 @@ public class Jeu {
 	public void inscrire(Joueur joueursAdd[]) {
 		for (Joueur joueur : joueursAdd) {
 			joueurs.addFirst(joueur);
-			
 		}
 	}
+	
+	
 	
 	
 }

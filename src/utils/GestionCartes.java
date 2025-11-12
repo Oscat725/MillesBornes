@@ -58,7 +58,7 @@ public class GestionCartes {
 		return true;
 	}
 
-	public static <E> List<E> rassembler(List<E> list) {
+	public static <E> List<E> rassemblerV2(List<E> list) {
 		List<E> newList = new ArrayList<>();
 		ListIterator<E> it = newList.listIterator();
 		for (Iterator<E> iterator = list.iterator(); iterator.hasNext();) {
